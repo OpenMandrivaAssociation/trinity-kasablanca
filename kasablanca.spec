@@ -37,10 +37,6 @@ Source0:		https://mirror.ppa.trinitydesktop.org/trinity/releases/R%{tde_version}
 BuildSystem:    cmake
 
 BuildOption:    -DCMAKE_BUILD_TYPE="RelWithDebInfo"
-BuildOption:    -DCMAKE_SKIP_RPATH=OFF
-BuildOption:    -DCMAKE_SKIP_INSTALL_RPATH=OFF
-BuildOption:    -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
-BuildOption:    -DCMAKE_INSTALL_RPATH="%{tde_prefix}/%{_lib}"
 BuildOption:    -DCMAKE_INSTALL_PREFIX="%{tde_prefix}"
 BuildOption:    -DSHARE_INSTALL_PREFIX="%{tde_prefix}/share"
 BuildOption:    -DWITH_ALL_OPTIONS=ON -DBUILD_ALL=ON
