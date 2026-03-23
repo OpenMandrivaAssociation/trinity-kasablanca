@@ -1,11 +1,9 @@
 %bcond clang 1
 
 # TDE variables
-%define tde_epoch 2
 %if "%{?tde_version}" == ""
 %define tde_version 14.1.5
 %endif
-%define pkg_rel 2
 
 %define tde_pkg kasablanca
 %define tde_prefix /opt/trinity
@@ -20,11 +18,9 @@
 
 %define tarball_name %{tde_pkg}-trinity
 
-
 Name:			trinity-%{tde_pkg}
-Epoch:			%{tde_epoch}
 Version:		0.4.0.2
-Release:		%{?tde_version}_%{?!preversion:%{pkg_rel}}%{?preversion:0_%{preversion}}%{?dist}
+Release:		%{?tde_version:%{tde_version}_}3
 Summary:		Graphical FTP client for Trinity
 Group:			Applications/Internet 
 Url:			http://kasablanca.berlios.de/ 
@@ -32,7 +28,7 @@ Url:			http://kasablanca.berlios.de/
 License:	GPLv2+
 
 
-Source0:		https://mirror.ppa.trinitydesktop.org/trinity/releases/R%{tde_version}/main/applications/internet/%{tarball_name}-%{tde_version}%{?preversion:~%{preversion}}.tar.xz
+Source0:		https://mirror.ppa.trinitydesktop.org/trinity/releases/R%{tde_version}/main/applications/internet/%{tarball_name}-%{tde_version}.tar.xz
 
 BuildSystem:    cmake
 
@@ -45,11 +41,12 @@ BuildOption:    -DWITH_GCC_VISIBILITY=%{!?with_clang:ON}%{?with_clang:OFF}
 
 BuildRequires:	trinity-tdelibs-devel >= %{tde_version}
 BuildRequires:	trinity-tdebase-devel >= %{tde_version}
+BuildRequires:	trinity-tde-cmake >= %{tde_version}
+BuildRequires:  tqt3-dev-tools
+
 BuildRequires:	desktop-file-utils
 
 BuildRequires:	gettext 
-
-BuildRequires:	trinity-tde-cmake >= %{tde_version}
 
 %{!?with_clang:BuildRequires:	gcc-c++}
 
