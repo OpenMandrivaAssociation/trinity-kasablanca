@@ -20,7 +20,7 @@
 
 Name:			trinity-%{tde_pkg}
 Version:		0.4.0.2
-Release:		%{?tde_version:%{tde_version}_}3
+Release:		%{?tde_version:%{tde_version}_}4
 Summary:		Graphical FTP client for Trinity
 Group:			Applications/Internet 
 Url:			http://kasablanca.berlios.de/ 
@@ -42,7 +42,6 @@ BuildOption:    -DWITH_GCC_VISIBILITY=%{!?with_clang:ON}%{?with_clang:OFF}
 BuildRequires:	trinity-tdelibs-devel >= %{tde_version}
 BuildRequires:	trinity-tdebase-devel >= %{tde_version}
 BuildRequires:	trinity-tde-cmake >= %{tde_version}
-BuildRequires:  tqt3-dev-tools
 
 BuildRequires:	desktop-file-utils
 
