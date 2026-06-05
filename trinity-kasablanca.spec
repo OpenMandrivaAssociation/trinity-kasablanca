@@ -16,7 +16,7 @@
 
 Name:			trinity-%{tde_pkg}
 Version:		14.1.6
-Release:		1
+Release:		2
 Summary:		Graphical FTP client for Trinity
 Group:			Applications/Internet 
 Url:			http://kasablanca.berlios.de/ 
